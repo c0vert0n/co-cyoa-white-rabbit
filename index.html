@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alice: Choose Your Own Adventure</title>
+  </head>
+  <link rel="stylesheet" href="style.css">
+  <body>
+    <div class="container">
+      <div id="intro">
+        <h1 class="heading">Alice's Adventures in Wonderland</h1>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/024/621/original/1-AliceEditionsThrutheYears-650px.png?1641782044"
+          alt="Alice Editions Through the Years"
+        />
+        <div class="text-grid">
+          <p>
+            This choose your own adventure game is inspired by Lewis Carroll's
+            <strong><em>Alice's Adventures in Wonderland</em></strong>, first published in 1865 with illustrations by <a href="https://www.alice-in-wonderland.net/resources/background/tenniel-and-his-illustrations/" alt="Learn more about Tenniel" target="_blank" />
+    Sir John Tenniel</a>.
+            Since then, this timeless story has been translated into over 170 languages and has inspired hundreds of film/television adaptations.
+          </p>
+          <p>The images you will see are taken from a 1918 card game called <strong><em>The New and Diverting Game of Alice in Wonderland</em></strong>, with rules very similar to "Go Fish". The deck which consisted of 48 cards, or 16 sets of three, would be dealt out to each player and the objective would then be to complete the most sets.</p>
+          <a
+            href="https://www.alice-in-wonderland.net/resources/"
+            target="_blank"
+            >Learn more about Alice</a
+          >
+        </div>
+        <div class="button-grid">
+          <button id="start" class="btn">Let's play!</button>
+          <button id="dontPlay" class="btn">No, not today...</button>
+        </div>
+      </div>
+      <!--beginning of game-->
+      <div id="twoDoors" style="display: none">
+        <h1 class="heading">Help Alice find the White Rabbit</h1>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/024/607/original/2-ChoiceDoors.JPG?1641770367"
+          alt="Two Doors"
+        />
+        <div class="text-grid">
+          <p>To begin your journey, choose a door:</p>
+        </div>
+        <div class="button-grid">
+          <button id="painters" class="btn">Red Door</button>
+          <button id="hatter" class="btn">Blue Door</button>
+        </div>
+      </div>
+
+      <!--show if user chooses red door-->
+      <div id="redDoor" style="display: none">
+        <h1 class="heading">Help Alice find the White Rabbit</h1>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/024/608/original/3-PaintingRosesDilemma.png?1641770405"
+          alt="Rose Painters"
+        />
+        <div class="text-grid">
+          <p>
+            You walk through the red door and find two Gardners painting the
+            Queen's royal roses red. Do you help them get the job done or report
+            them to the Red Queen?
+          </p>
+        </div>
+        <div class="button-grid">
+          <button id="help" class="btn">Help them out!</button>
+          <button id="snitch" class="btn">Snitch!</button>
+        </div>
+      </div>
+
+      <!--show if user chooses blue door-->
+      <div id="blueDoor" style="display: none">
+        <h1 class="heading">Help Alice find the White Rabbit</h1>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/024/609/original/3-MadHatterQuestion.png?1641770435"
+          alt="Mad Hatter"
+        />
+        <div class="text-grid">
+          <p>
+            You walk through the blue door and find the Mad Hatter's Tea Party.
+            Answer this question to leave unscathed...<br /><br />I'm sneaky and
+            kooky and just a bit mad. I aim to confuse anyone who ventures
+            through Wonderland. Who am I? <br /><br /><em
+              >Hint: I'm known for my trademark grin</em
+            >
+          </p>
+        </div>
+        <div class="button-grid">
+          <button id="cheshireCat" class="btn">The Cheshire Cat</button>
+          <button id="caterpillar" class="btn">The Smoking Caterpillar</button>
+        </div>
+      </div>
+
+      <!--how if user chooses to snitch or the caterpillar-->
+      <div id="redQueen" style="display: none">
+        <h1 class="heading">
+          You've reached the end of your journey...run if you intend to keep
+          your head!
+        </h1>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/024/610/original/4-RedQueenEnd.png?1641770474"
+          alt="Red Queen"
+        />
+        <div class="text-grid">
+          <span class="info"
+            ><em>Refresh the page to go back to the beginning.</em></span
+          >
+        </div>
+      </div>
+
+      <!--show if user chooses to help or cheshire cat-->
+
+      <div id="whiteRabbit" style="display: none">
+        <h1 class="heading">
+          You've made it through Wonderland and found the White Rabbit!
+        </h1>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/024/611/original/4-WhiteRabbitFoundSuccess.png?1641770504"
+          alt="White Rabbit"
+        />
+        <div class="text-grid">
+          <span class="info"
+            ><em>Refresh the page to go back to the beginning.</em></span
+          >
+        </div>
+      </div>
+
+      <!--opt out of game-->
+      <div id="noPlay" style="display: none">
+        <h1 class="heading">Catch you next time!</h1>
+        <div>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/024/612/original/5-AliceDontPlay.png?1641770533"
+            alt="Alice with the Queen's Cards"
+          />
+        </div>
+        <div class="text-grid">
+          <span class="info"
+            ><em>Refresh the page to go back to the beginning.</em></span
+          >
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
