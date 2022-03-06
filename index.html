@@ -6,7 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alice: Choose Your Own Adventure</title>
   </head>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(
+        108.1deg,
+        rgb(167, 220, 225) 11.2%,
+        rgb(217, 239, 242) 88.9%
+      );
+      line-height: 1.5;
+    }
+    p {
+      font-size: 15px;
+    }
+    h1 {
+      margin: 10px auto;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px;
+      padding: 0px;
+      max-width: 50%;
+      border-radius: 10px;
+    }
+    a {
+      font-family: inherit;
+      font-size: 15px;
+      color: black;
+    }
+    a:hover {
+      text-decoration: none;
+      text-emphasis: ;
+      color: #40a798;
+      cursor: pointer;
+      transition: 250ms ease;
+    }
+    .container {
+      width: 800px;
+      max-width: 80%;
+      background-color: #f5e1da;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px 2px;
+      display: grid;
+    }
+    .text-grid {
+      gap: 10px;
+      margin: 10px;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 10px;
+      margin: 15px 0px 15px 0px;
+    }
+    .btn {
+      background-color: #40a798;
+      border: 1.5px solid #40a798;
+      border-radius: 5px;
+      padding: 10px 15px;
+      color: white;
+      outline: none;
+      transition: 300ms ease-in-out;
+      font-size: 14px;
+    }
+    .btn:hover {
+      border-color: #476268;
+      background-color: #394a51;
+      transition: 300ms ease-in-out;
+      cursor: pointer;
+    }
+    .heading {
+      display: block;
+      text-align: center;
+      text-shadow: 3px 4px 2px rgba(64, 167, 152, 0.3);
+      color: #40a798;
+      font-weight: bolder;
+      line-height: 1.5em;
+      font-family: Georgia, serif;
+      font-style: oblique;
+      margin: 10px auto;
+    }
+    .info {
+      display: block;
+      margin: 0px auto;
+      text-align: center;
+      line-height: 2em;
+      font-family: inherit;
+      font-weight: lighter;
+      font-size: 14px;
+    }
+  </style>
   <body>
     <div class="container">
       <div id="intro">
@@ -143,6 +241,113 @@
         </div>
       </div>
     </div>
-    <script src="src/script.js"></script>
+    <script>
+      function play() {
+        let name = prompt("What is your first name?");
+        let startGame = confirm(
+          `Hi ${name}, are you ready to help Alice find the White Rabbit?`
+        );
+        if (startGame === true) {
+          document.getElementById("intro").style.display = "none";
+          document.getElementById("twoDoors").style.display = "block";
+        } else {
+          document.getElementById("intro").style.display = "none";
+          document.getElementById("noPlay").style.display = "block";
+        }
+      }
+      function redDoor() {
+        let painters = confirm(
+          "Are you sure you want to go through the red door?"
+        );
+        if (painters === true) {
+          document.getElementById("twoDoors").style.display = "none";
+          document.getElementById("redDoor").style.display = "block";
+        } else {
+          alert("Time's ticking...the White Rabbit's getting away!");
+        }
+      }
+      function helpPaint() {
+        let helpPaint = confirm("Teamwork makes the dream work!");
+        if (helpPaint === true) {
+          document.getElementById("redDoor").style.display = "none";
+          document.getElementById("whiteRabbit").style.display = "block";
+        } else {
+          alert("Will you be part of the problem or the solution?");
+        }
+      }
+      function snitched() {
+        let snitches = confirm("All ways are the Queen's way...");
+        if (snitches === true) {
+          document.getElementById("redDoor").style.display = "none";
+          document.getElementById("redQueen").style.display = "block";
+        } else {
+          alert("Decisions, decisions...");
+        }
+      }
+      function blueDoor() {
+        let hatter = confirm(
+          "Are you sure you want to go through the blue door?"
+        );
+        if (hatter === true) {
+          document.getElementById("twoDoors").style.display = "none";
+          document.getElementById("blueDoor").style.display = "block";
+        } else {
+          alert("Time's ticking...the White Rabbit's getting away!");
+        }
+      }
+      function pickCat() {
+        let catsGrin = confirm("Twas brillig, and the slithy toves...");
+        if (catsGrin === true) {
+          document.getElementById("blueDoor").style.display = "none";
+          document.getElementById("whiteRabbit").style.display = "block";
+        } else {
+          alert("Quick, before the grin disappears...");
+        }
+      }
+      function pickCaterpillar() {
+        let smokingCaterpillar = confirm(
+          "You are old, Father William, the young man said..."
+        );
+        if (smokingCaterpillar === true) {
+          document.getElementById("blueDoor").style.display = "none";
+          document.getElementById("redQueen").style.display = "block";
+        } else {
+          alert("Take the Caterpillar's advice with a grain of salt...");
+        }
+      }
+      function endGame() {
+        let endGame = confirm("Are your sure you want to go?");
+        if (endGame === true) {
+          document.getElementById("intro").style.display = "none";
+          document.getElementById("noPlay").style.display = "block";
+        } else {
+          alert("Great, Alice still needs your help!");
+        }
+      }
+
+      let start = document.getElementById("start");
+      start.addEventListener("click", play);
+
+      let end = document.getElementById("dontPlay");
+      end.addEventListener("click", endGame);
+
+      let painters = document.getElementById("painters");
+      painters.addEventListener("click", redDoor);
+
+      let helpCards = document.getElementById("help");
+      helpCards.addEventListener("click", helpPaint);
+
+      let dontHelpCards = document.getElementById("snitch");
+      dontHelpCards.addEventListener("click", snitched);
+
+      let hatter = document.getElementById("hatter");
+      hatter.addEventListener("click", blueDoor);
+
+      let smilingCat = document.getElementById("cheshireCat");
+      smilingCat.addEventListener("click", pickCat);
+
+      let hookah = document.getElementById("caterpillar");
+      hookah.addEventListener("click", pickCaterpillar);
+    </script>
   </body>
 </html>
